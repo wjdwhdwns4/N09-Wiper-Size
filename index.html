@@ -623,7 +623,7 @@ async function init(){
     // U-Type 차종이 5개 이하인 제조사는 통째로 숨김 (6개 이상만 노출)
     const compatCount={};
     DATA.forEach(r=>{if(isCompat(r)) compatCount[r.brand]=(compatCount[r.brand]||0)+1;});
-    DATA = DATA.filter(r=>(compatCount[r.brand]||0)>5);
+    DATA = DATA.filter(r=>(compatCount[r.brand]||0)>6);
     if(!DATA.length){
       resEl.innerHTML='<div class="errbox"><div class="big">데이터가 비어있어요</div>스프레드시트에 차량 정보가 입력되어 있는지 확인해 주세요.</div>';
       return;
